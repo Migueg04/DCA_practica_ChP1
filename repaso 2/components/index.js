@@ -1,3 +1,4 @@
+import "./dashboard/dashboard.js";
 
 class AppContainer extends HTMLElement{
     constructor(){
@@ -11,7 +12,8 @@ class AppContainer extends HTMLElement{
 
     render(){
         this.shadowRoot.innerHTML = `
-            
+            <h1>Clinica la otra vida</h1>
+            <app-dashboard></app-dashboard>
         `
     }
 }
