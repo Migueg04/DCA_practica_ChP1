@@ -87,10 +87,8 @@ class Dashboard extends HTMLElement{
                 
             </div>
             <div id="">
+            
             <div id="atendido">
-                
-            </div>
-            <div id="">
                 
             </div>
         </div>
@@ -121,23 +119,21 @@ class Dashboard extends HTMLElement{
 
             card.addEventListener("click", () => {
                 this.listaAtendidos.push(patient);
-                this.listaPendientes = this.listaPendientes.filter(paciente => paciente.name !== card.name);
+                this.listaPendientes = this.listaPendientes.filter(patient => patient.name !== card.name);
                 this.renderPacientes();
             })
-
-        containerPendientes.appendChild(card);
-
+            containerPendientes.appendChild(card);
         });
 
         //Atendidos
         const containerAtendidos = this.shadowRoot.querySelector("#atendido");
-        containerPendientes.innerHTML = "";
+        containerAtendidos.innerHTML = "";
         this.listaPendientes.forEach(patient =>{
             const card = document.createElement("card-component");
             card.name = patient.name;
             card.age = patient.age;
 
-            containerPendientes.appendChild(card);
+            containerAtendidos.appendChild(card);
         })
     }
 
